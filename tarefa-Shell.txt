@@ -1,5 +1,0 @@
-1. renomear arquivo por arquivo de um modo mais sistemático e/ou que os nomes façam sentido.
-
-2. comentar arquivos de programa um a um, para que se expliquem.
-
-3. e essa é a tarefa shell, criar um arquivo .sh que compile todos os arquivos de uma vez;
