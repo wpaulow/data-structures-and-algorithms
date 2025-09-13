@@ -1,55 +1,64 @@
-// pilha.h - implementacao dinamica sequencial de pilha
-
+// stack.h - sequential dynamic stack implementation
+#include <stdio.h>
 #include <stdlib.h>
 
 //typedef float Itemp;
-typedef int Itemp;
+typedef int SItem;
 
-typedef struct pilha {
+typedef struct stack {
     int    max;
-    int    topo;
-    Itemp *item;
-}*Pilha;
+    int    top;
+    SItem *item;
+}*Stack;
 
-Pilha pilha(int m) {
-    Pilha P = malloc(sizeof(struct pilha));
-    P->max  = m;
-    P->topo = -1;
-    P->item = malloc(m*sizeof(Itemp));
-    return P;
+Stack stack(int max) {
+    Stack S = malloc(sizeof(struct stack));
+    S->max  = max;
+    S->top = -1;
+    S->item = malloc(max*sizeof(SItem));
+    return S;
 }
 
-int vaziap(Pilha P) {
-    if( P->topo == -1 ) return 1;
+int isEmpty(Stack S) {
+    if(S->top == -1) return 1;
     else return 0;
 }
 
-int cheiap(Pilha P) {
-    if( P->topo == P->max-1 ) return 1;
+int isFull(Stack S) {
+    if(S->top == S->max-1) return 1;
     else return 0;
 }
 
-void empilha(Itemp x, Pilha P) {
-    if( cheiap(P) ) { puts("pilha cheia!"); abort(); }
-    P->topo++;
-    P->item[P->topo] = x;
+void push(SItem x, Stack S) {
+    if(isFull(S)) {
+        puts("Error: Full Stack.");
+        abort();
+    }
+    S->top++;
+    S->item[S->top] = x;
 }
 
-Itemp desempilha(Pilha P) {
-    if( vaziap(P) ) { puts("pilha vazia!"); abort(); }
-    Itemp x = P->item[P->topo];
-    P->topo--;
+SItem pop(Stack S) {
+    if(isEmpty(S)) {
+        puts("Error: Empty Stack.");
+        abort();
+    }
+    SItem x = S->item[S->top];
+    S->top--;
     return x;
 }
 
-Itemp topo(Pilha P) {
-    if( vaziap(P) ) { puts("pilha vazia!"); abort(); }
-    return P->item[P->topo];
+SItem top(Stack S) {
+    if(isEmpty(S)) {
+        puts("Error: Empty Stack.");
+        abort();
+    }
+    return S->item[S->top];
 }
 
-void destroip(Pilha *Q) {
-    free((*Q)->item);
-    free(*Q);
-    *Q = NULL;
+void destroy(Stack *S) {
+    free((*S)->item);
+    free(*S);
+    *S = NULL;
 }
 
