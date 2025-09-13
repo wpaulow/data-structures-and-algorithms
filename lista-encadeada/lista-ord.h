@@ -113,19 +113,32 @@ int oed(Lista L) {
    return oed(L->prox);
 }
 
-// gemini
+// insere decrescente
 void ins_inv(Item x, Lista *L) {
-   if(*L == NULL) {
-    *L = no(x, NULL);
-    return;
-  }
-  if((*L)->item < x) {
-    *L = no(x, *L);
-    return;
-  }
-  ins_inv(x, &(*L)->prox);
+    if(*L == NULL) {
+        *L = no(x, NULL);
+        return;
+    }
+    if((*L)->item < x) {
+        *L = no(x, *L);
+        return;
+    }
+    ins_inv(x, &(*L)->prox);
 }
 
+// insere decrescente sem repetição
+void ins_inv_sr(Item x, Lista *L) {
+    if (*L == NULL) {
+        *L = no(x, NULL);
+        return;
+    }
+    if ((*L)->item == x) return; 
+    if ((*L)->item < x) {
+        *L = no(x, *L);
+        return;
+    }
+    ins_inv_sr(x, &(*L)->prox);
+}
 
 // remove todos usando a função descarta(), como o profs pediu na tarefa
 
