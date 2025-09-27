@@ -1,7 +1,7 @@
 /**
  * Receives a not necessarily completely parenthesized arithmetic expression,
  * but whose operands are single-digit numbers.
- * And returns the arithmetic expression in its postfix form, along with the
+ * And returns the arithmetic expression in its postfixed form, along with the
  * result of the expression.
  **/
 
