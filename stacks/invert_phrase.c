@@ -21,7 +21,7 @@ int main(int argc, char **argv) {
 	while(!isEmpty(S)) printf("%c", pop(S));
 	puts(" ");
 
-    destroy(&S);
+    destroyStack(&S);
     
 	return 0;
 }

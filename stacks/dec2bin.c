@@ -15,6 +15,6 @@ int main(void) {
     while(!isEmpty(S))
         printf("%d", pop(S));
     printf("\n");
-    destroy(&S);
+    destroyStack(&S);
     return 0;
 }

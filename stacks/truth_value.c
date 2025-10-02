@@ -18,7 +18,7 @@ char *postfix(char *e){
         else if(e[i] == ')') s[j++] = pop(S);
     }
     s[j] = '\0';
-    destroy(&S);
+    destroyStack(&S);
 
     return s;
 }
@@ -44,7 +44,7 @@ int truthValue(char *e) {
         }
     }
     char truthValue = top(S);
-    destroy(&S);
+    destroyStack(&S);
     if(truthValue == 'T') return 1;
     if(truthValue == 'F') return 0;
 }

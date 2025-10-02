@@ -19,7 +19,7 @@ SItem largest(Stack S) {
         big = MAX(big, b);
     }
     while(!isEmpty(auxStack)) push(pop(auxStack), S);
-    destroy(&auxStack);
+    destroyStack(&auxStack);
     return big;
 }
 

@@ -79,7 +79,7 @@ int main(void) {
         }
     }
     close_keyboard();
-    destroy(&px);
-    destroy(&py);
+    destroyStack(&px);
+    destroyStack(&py);
     return 0;
 }

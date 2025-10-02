@@ -35,9 +35,9 @@ int main() {
     }
     printf("\n");
 
-    destroy(&source);
-    destroy(&destination);
-    destroy(&auxiliar);
+    destroyStack(&source);
+    destroyStack(&destination);
+    destroyStack(&auxiliar);
 
     return 0;
 }

@@ -41,7 +41,7 @@ char *postfix(char *e) {
     }
     while(!isEmpty(S)) s[j++] = pop(S);
     s[j] = '\0';
-    destroy(&S);
+    destroyStack(&S);
     return s;
 }
 
@@ -61,7 +61,7 @@ int result(char *e) {
         }
     }
     int r = top(S);
-    destroy(&S);
+    destroyStack(&S);
     return r;
 }
 

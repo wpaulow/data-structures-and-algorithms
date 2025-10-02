@@ -35,7 +35,7 @@ char *prefix(char *e){
       else if(e[i] == '(') s[j++] = pop(S);
    }
    s[j] = '\0';
-   destroy(&S);
+   destroyStack(&S);
    strrev(s);
    return s;
 }
@@ -58,7 +58,7 @@ int result(char *e) {
       }  
    }
    int r = top(S);
-   destroy(&S);
+   destroyStack(&S);
    return r;
 }
 

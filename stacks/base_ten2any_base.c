@@ -21,7 +21,7 @@ char *convertBase(int n, int base){
     }
     while(!isEmpty(S)) converted[i++] = pop(S);
     converted[i] = '\0';
-    destroy(&S);
+    destroyStack(&S);
     return converted;
 }
 

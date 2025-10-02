@@ -60,7 +60,7 @@ int size(Stack S) {
     return (S->top)+1;
 }
 
-void destroy(Stack *S) {
+void destroyStack(Stack *S) {
     free((*S)->item);
     free(*S);
     *S = NULL;

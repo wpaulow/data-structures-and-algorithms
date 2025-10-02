@@ -24,7 +24,7 @@ int bal(char *str){
         }
     }
     int r = isEmpty(S);
-    destroy(&S);
+    destroyStack(&S);
     return r;
 }
 
