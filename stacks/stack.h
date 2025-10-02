@@ -56,6 +56,10 @@ SItem top(Stack S) {
     return S->item[S->top];
 }
 
+int size(Stack S) {
+    return (S->top)+1;
+}
+
 void destroy(Stack *S) {
     free((*S)->item);
     free(*S);
