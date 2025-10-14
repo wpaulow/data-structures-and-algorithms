@@ -19,14 +19,14 @@ int main(int argc, char **argv)
 		push(y, B);
 	}
 	
-	while(!isEmpty(B)) {
+	while(!stackIsEmpty(B)) {
 		num = pop(B);
-		while(!isEmpty(A) && top(A) > num) push(pop(A), B);
-		if(isEmpty(A) || top(A) != num) push(num, A);
+		while(!stackIsEmpty(A) && top(A) > num) push(pop(A), B);
+		if(stackIsEmpty(A) || top(A) != num) push(num, A);
 	}	
 	
 	puts("");
-	while(!isEmpty(A)) printf("%d ", pop(A));
+	while(!stackIsEmpty(A)) printf("%d ", pop(A));
 	puts("");
 
 	destroyStack(&A);

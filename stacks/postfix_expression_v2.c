@@ -30,7 +30,7 @@ char *postfix(char *e) {
         if(e[i] == '(') push('(', S);
         else if(isdigit(e[i])) s[j++] = e[i];
         else if(strchr("+/-*", e[i])){
-            while(!isEmpty(S) && priority(top(S)) >= priority(e[i]))
+            while(!stackIsEmpty(S) && priority(top(S)) >= priority(e[i]))
                 s[j++] = pop(S);
             push(e[i], S);
         }
@@ -39,7 +39,7 @@ char *postfix(char *e) {
             pop(S);
         }
     }
-    while(!isEmpty(S)) s[j++] = pop(S);
+    while(!stackIsEmpty(S)) s[j++] = pop(S);
     s[j] = '\0';
     destroyStack(&S);
     return s;

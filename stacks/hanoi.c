@@ -25,12 +25,12 @@ int main() {
     push(3, source);
     push(1, source);
 
-    int n = size(source);        // count how many elements to move
+    int n = sizeStack(source);        // count how many elements to move
     move_n(source, destination, auxiliar, n);
 
     // Print the items in the target stack (from top to bottom)
     int v;
-    while (!isEmpty(destination)) {
+    while (!stackIsEmpty(destination)) {
         printf("%d ", pop(destination));
     }
     printf("\n");

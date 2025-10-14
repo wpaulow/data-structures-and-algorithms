@@ -13,12 +13,12 @@ int main(int argc, char **argv) {
 		char charlinho = phrase[i];
 		if(charlinho != ' ') push(charlinho, S);
 		else {
-			while(!isEmpty(S)) printf("%c", pop(S));
+			while(!stackIsEmpty(S)) printf("%c", pop(S));
 			printf("%c", charlinho);
 		}
 	}
 	
-	while(!isEmpty(S)) printf("%c", pop(S));
+	while(!stackIsEmpty(S)) printf("%c", pop(S));
 	puts(" ");
 
     destroyStack(&S);

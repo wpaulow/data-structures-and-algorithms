@@ -12,7 +12,7 @@ int main(void) {
         n /= 2;
     } while(n > 0);
     printf("Binary: ");
-    while(!isEmpty(S))
+    while(!stackIsEmpty(S))
         printf("%d", pop(S));
     printf("\n");
     destroyStack(&S);

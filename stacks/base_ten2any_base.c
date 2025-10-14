@@ -19,7 +19,7 @@ char *convertBase(int n, int base){
         if(rest > 10) push(baseAZ(rest), S);
         else push(rest + '0', S);
     }
-    while(!isEmpty(S)) converted[i++] = pop(S);
+    while(!stackIsEmpty(S)) converted[i++] = pop(S);
     converted[i] = '\0';
     destroyStack(&S);
     return converted;

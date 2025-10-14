@@ -19,12 +19,12 @@ Stack stack(int max) {
     return S;
 }
 
-int isEmpty(Stack S) {
+int stackIsEmpty(Stack S) {
     if(S->top == -1) return 1;
     else return 0;
 }
 
-int isFull(Stack S) {
+int stackIsFull(Stack S) {
     if(S->top == S->max-1) return 1;
     else return 0;
 }
@@ -56,7 +56,7 @@ SItem top(Stack S) {
     return S->item[S->top];
 }
 
-int size(Stack S) {
+int stackSize(Stack S) {
     return (S->top)+1;
 }
 

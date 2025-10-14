@@ -13,12 +13,12 @@
 SItem largest(Stack S) {
     SItem big = 0, b = 0;
     Stack auxStack = stack(S->max);
-    while(!isEmpty(S)){
+    while(!stackIsEmpty(S)){
         b = pop(S);
         push(b, auxStack);
         big = MAX(big, b);
     }
-    while(!isEmpty(auxStack)) push(pop(auxStack), S);
+    while(!stackIsEmpty(auxStack)) push(pop(auxStack), S);
     destroyStack(&auxStack);
     return big;
 }
@@ -38,7 +38,7 @@ int main(void){
 
     printf("The largest item in this stack is %d.\n\n", largest(S));
 
-    while(!isEmpty(S)) {
+    while(!stackIsEmpty(S)) {
         printf("Printing the stack for checking: %d.\n", pop(S));
     }
 

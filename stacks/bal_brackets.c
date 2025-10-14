@@ -17,13 +17,13 @@ int bal(char *str){
             case '[': push(']', S); break;
             case '{': push('}', S); break;
             default: 
-                if(isEmpty(S) || str[i] != pop(S)){
-                    destroy(&S);
+                if(stackIsEmpty(S) || str[i] != pop(S)){
+                    destroyStack(&S);
                     return 0;
                 }        
         }
     }
-    int r = isEmpty(S);
+    int r = stackIsEmpty(S);
     destroyStack(&S);
     return r;
 }
