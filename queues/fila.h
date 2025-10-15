@@ -3,8 +3,6 @@
 
 #define avanca(i) (i = (i+1) % F->max)
 
-//typedef char *Itemf; //várias cadeias de caracteres (string)
-//typedef char Itemf; //única string a ser percorrida
 typedef int Itemf; 
 
 typedef struct fila {

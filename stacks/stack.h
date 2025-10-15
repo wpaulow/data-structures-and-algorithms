@@ -30,7 +30,7 @@ int stackIsFull(Stack S) {
 }
 
 void push(SItem x, Stack S) {
-    if(isFull(S)) {
+    if(stackIsFull(S)) {
         puts("Error: Full Stack.");
         abort();
     }
@@ -39,7 +39,7 @@ void push(SItem x, Stack S) {
 }
 
 SItem pop(Stack S) {
-    if(isEmpty(S)) {
+    if(stackIsEmpty(S)) {
         puts("Error: Empty Stack.");
         abort();
     }
@@ -49,7 +49,7 @@ SItem pop(Stack S) {
 }
 
 SItem top(Stack S) {
-    if(isEmpty(S)) {
+    if(stackIsEmpty(S)) {
         puts("Error: Empty Stack.");
         abort();
     }
