@@ -3,6 +3,7 @@
 #include <stdbool.h>
 
 typedef int QItem;
+// typedef char *QItem; // for shells.c
 
 typedef struct queue {
     int start;       // Index of the beginning of the queue
